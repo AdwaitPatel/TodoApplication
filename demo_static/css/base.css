@@ -1,0 +1,26 @@
+body {
+    background: url("/static/images/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.quote {
+    text-align: center;
+    margin-top: 50px;
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    margin-top: 30%;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+

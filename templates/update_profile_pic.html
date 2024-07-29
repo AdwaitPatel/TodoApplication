@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Profile Update
+{% endblock %}
+
+
+{% block body %}
+
+<div class="container text-light">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <h1 class="mt-5 mb-5">Upload Profile Picture</h1>
+
+            <form method="POST" enctype="multipart/form-data">
+
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <img src="http://127.0.0.1:8000/media/profile_pic/coding.jpg" width=60% alt="Profile Picture" class="profile-pic img-thumbnail">
+                </div>
+                <div class="row mt-5 d-flex justify-content-center">
+                    <div class="col-md-6">
+                        <input type="file" class="form-control-file" name="profile_pic" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success pl-3 pr-3 mt-5" style="margin-bottom:30%">Upload</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+

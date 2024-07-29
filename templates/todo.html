@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Todo
+{% endblock %}
+
+
+{% block body %}
+<div class="row d-flex justify-content-center m-5">
+    <div class="col-6">
+
+        <!--My task-->
+
+        <h1 class="text-light text-center mb-5">My Task ({{ todos.count }})</h1>
+
+        <table class="table table-success table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Task Name</th>
+                <th scope="col">Date</th>
+                <th scope="col" class="text-end">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+
+                {% for todo in todos %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td> {{ todo.task }} </td>
+                    <td> {{ todo.date }} </td>
+                    <td><a href="{% url 'update_task' todo.id %}" class="btn btn-warning btn">Update</a></td>
+                    <td><a href="{% url 'remove_task' todo.id %}" class="btn btn-danger btn">Delete</a></td>
+                    <td><a href="{% url 'complete_task' todo.id %}" class="btn btn-success btn">Complete</a></td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+
+        <div class="d-flex justify-content-center mt-5 mb-5">
+            <a href="{% url 'add_todo' %}" class="btn btn-info"><h5>Add Todo</h5></a>
+        </div>
+
+        <!--Completed todos-->
+
+        <h1 class="text-light text-center mb-5">Completed Tasks ({{ completed_todos.count }})</h1>
+
+        <table class="table table-success table-hover mb-5">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Task Name</th>
+                <th scope="col">Date</th>
+                <th scope="col" class="text-center">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+
+                {% for todo in completed_todos %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td> {{ todo.task }} </td>
+                    <td> {{ todo.date }} </td>
+                    <td><a href="{% url 'remove_task' todo.id %}" class="btn btn-danger btn">Delete Permanently</a></td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
