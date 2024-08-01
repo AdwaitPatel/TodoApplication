@@ -1,0 +1,199 @@
+.btn-101,
+.btn-101 *,
+.btn-101 :after,
+.btn-101 :before,
+.btn-101:after,
+.btn-101:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+.btn-101 {
+  -webkit-tap-highlight-color: 
+transparent;
+  -webkit-appearance: button;
+  background-color: 
+#000;
+  background-image: none;
+  color: 
+#fff;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+  text-transform: uppercase;
+}
+.btn-101:disabled {
+  cursor: default;
+}
+.btn-101:-moz-focusring {
+  outline: auto;
+}
+.btn-101 svg {
+  vertical-align: middle;
+}
+.btn-101 [hidden] {
+  display: none;
+}
+.btn-101 {
+  --thickness: 0.3rem;
+  --roundness: 1.2rem;
+  --color: 
+#eff6ff;
+  --opacity: 0.6;
+  -webkit-backdrop-filter: blur(100px);
+  backdrop-filter: blur(100px);
+  background: none;
+  background: 
+hsla(0, 0%, 0%, 0.542);
+  border: none;
+  border-radius: var(--roundness);
+  color: var(--color);
+  cursor: pointer;
+  display: block;
+  font-family: Poppins, "sans-serif";
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 3rem;   
+  position: relative;
+}
+.btn-101:hover {
+  background: 
+hsla(0, 0%, 0%, 0.3);
+  filter: brightness(1.2);
+}
+.btn-101:active {
+  --opacity: 0;
+  background: 
+hsla(0, 0%, 100%, 0.1);
+}
+.btn-101 svg {
+  border-radius: var(--roundness);
+  display: block;
+  filter: url(#glow);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.btn-101 rect {
+  fill: none;
+  stroke: var(--color);
+  stroke-width: var(--thickness);
+  rx: var(--roundness);
+  stroke-linejoin: round;
+  stroke-dasharray: 185%;
+  stroke-dashoffset: 80;
+  -webkit-animation: snake 2s linear infinite;
+  animation: snake 2s linear infinite;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.2s;
+  width: 100%;
+}
+.btn-101:hover rect {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+  opacity: var(--opacity);
+}
+@-webkit-keyframes snake {
+  to {
+    stroke-dashoffset: 370%;
+  }
+}
+@keyframes snake {
+  to {
+    stroke-dashoffset: 370%;
+  }
+}
+
+
+
+/* Enter Button */
+
+
+.glow-on-hover {
+    width: 150px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: 
+#fff;
+    background: 
+#000000;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: 
+#000
+}
+
+.glow-on-hover:active:after {
+    background: 
+transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+#111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

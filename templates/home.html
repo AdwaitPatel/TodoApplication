@@ -11,22 +11,60 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
 
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark pt-4" style="background-color:black">
+    <nav class="navbar navbar-expand-lg navbar-dark pt-3" style="background-color:black">
         <a class="navbar-brand" href="{% url 'home' %}"><h5>ToDo App</h5></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
+
                 <li class="nav-item">
-                    <a class="btn btn-success mx-2 h6" href="{% url 'login' %}">Login</a>
+                    <a href="{% url 'login' %}" style="text-decoration: none">
+                     <button class="btn-101">
+                         Log in
+                         <svg>
+                           <defs>
+                             <filter id="glow">
+                               <fegaussianblur result="coloredBlur" stddeviation="5"></fegaussianblur>
+                               <femerge>
+                                 <femergenode in="coloredBlur"></femergenode>
+                                 <femergenode in="coloredBlur"></femergenode>
+                                 <femergenode in="coloredBlur"></femergenode>
+                                 <femergenode in="SourceGraphic"></femergenode>
+                               </femerge>
+                             </filter>
+                           </defs>
+                           <rect />
+                         </svg>
+                     </button>
+                    </a> 
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-warning mx-2 h6" href="{% url 'signup' %}">Signup</a>
+                    <a href="{% url 'signup' %}" style="text-decoration: none">
+                        <button class="btn-101">
+                            Sign up
+                            <svg>
+                              <defs>
+                                <filter id="glow">
+                                  <fegaussianblur result="coloredBlur" stddeviation="5"></fegaussianblur>
+                                  <femerge>
+                                    <femergenode in="coloredBlur"></femergenode>
+                                    <femergenode in="coloredBlur"></femergenode>
+                                    <femergenode in="coloredBlur"></femergenode>
+                                    <femergenode in="SourceGraphic"></femergenode>
+                                  </femerge>
+                                </filter>
+                              </defs>
+                              <rect />
+                            </svg>
+                        </button>
+                    </a> 
                 </li>
             </ul>
         </div>
@@ -37,7 +75,9 @@
         <div class="container quote mb-5" style="margin-top:10%">
             <h1 class="display-4 text-light">"Time management is the key to success."</h1>
         
-            <a type="button" href="{% url 'login' %}" class="btn btn-outline-light btn-lg mt-5"><h4>Enter Todo</h4></a>
+            <a type="button" href="{% url 'login' %}" class="mt-5">
+                <button class="glow-on-hover">Get Started</button>
+            </a>
         </div>
     
 

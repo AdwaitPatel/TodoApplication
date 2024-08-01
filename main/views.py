@@ -13,6 +13,10 @@ def home(request):
 
 def todo(request):
 
+    user = request.user
+
+    #========================= main section ============
+
     todos = Todo.objects.all()
 
     incomplete_todos = todos.filter(is_completed = False)    
@@ -22,6 +26,7 @@ def todo(request):
     context = {
         "todos": incomplete_todos,
         "completed_todos": completed_todos,
+        "user": user
     }
 
     return render(request, "todo.html", context)
