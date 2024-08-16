@@ -21,7 +21,9 @@
                 <h4 class="card-title text-center mb-4">Login</h4>
 
                 <form method="post">
+
                     {% csrf_token %}
+                    
                     <div class="form-group my-3">
                         <label for="username">Username</label>
                         <input type="text" class="form-control" id="username" name="username" required>

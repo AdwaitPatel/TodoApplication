@@ -15,13 +15,11 @@ def todo(request):
 
     user = request.user
 
-    #========================= main section ============
-
     todos = Todo.objects.all()
 
-    incomplete_todos = todos.filter(is_completed = False)    
+    incomplete_todos = todos.filter(is_completed = False, user = user)    
 
-    completed_todos = todos.filter(is_completed = True)
+    completed_todos = todos.filter(is_completed = True, user = user)
 
     context = {
         "todos": incomplete_todos,
@@ -42,7 +40,12 @@ def add_todo(request):
         todo = request.POST.get("task")
         date = request.POST.get("date")
 
-        create_todo = Todo(task = todo, date = date)
+        create_todo = Todo(
+            user = request.user,
+            task = todo, 
+            date = date
+            )
+        
         create_todo.save()
 
         return redirect("todo")

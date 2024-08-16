@@ -73,8 +73,14 @@ def signup(request):
 
 
 
+# ========================================== LOGOUT =================================
 
 
+def logout(request):
+
+    auth.logout(request)
+
+    return redirect("home")
 
 
 
